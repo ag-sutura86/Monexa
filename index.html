@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Monexa - Échangez Bitcoin, Ethereum, USDT avec Airtel Money et Moov Money au Niger. Plateforme crypto simple et sécurisée.">
+    <meta name="keywords" content="bitcoin niger, crypto niger, acheter bitcoin niger, airtel money crypto, moov money bitcoin">
+    <title>Monexa - Plateforme Crypto Niger</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+    <!-- PWA Meta Tags -->
+    <meta name="theme-color" content="#f8a61c">
+    <link rel="manifest" href="manifest.json">
+    <!-- Open Graph for Social Media -->
+    <meta property="og:title" content="Monexa - Plateforme Crypto Niger">
+    <meta property="og:description" content="Échangez Bitcoin, Ethereum, USDT avec Airtel Money et Moov Money">
+    <meta property="og:image" content="assets/images/logo.png">
+    <meta property="og:url" content="https://monexa.ne">
+    <meta property="og:type" content="website">
+</head>
+<body>
+    <!-- Top Banner -->
+    <div class="top-banner">
+        <div class="container">
+            <span><i class="fas fa-bullhorn"></i> Lancement officiel ! Déposez dès 5$ avec Airtel Money</span>
+            <span class="close-banner" onclick="this.parentElement.parentElement.style.display='none'">&times;</span>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <i class="fas fa-coins"></i>
+                <span>MONEXA</span>
+            </div>
+            
+            <nav class="nav-menu" id="navMenu">
+                <a href="#accueil" class="active"><i class="fas fa-home"></i> Accueil</a>
+                <a href="#marche"><i class="fas fa-chart-line"></i> Marché</a>
+                <a href="#echanger"><i class="fas fa-exchange-alt"></i> Échanger</a>
+                <a href="#paiements"><i class="fas fa-mobile-alt"></i> Paiements</a>
+                <a href="#aide"><i class="fas fa-question-circle"></i> Aide</a>
+                <a href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
+            </nav>
+            
+            <div class="header-buttons">
+                <button class="btn btn-outline btn-sm" onclick="openModal('loginModal')">
+                    <i class="fas fa-sign-in-alt"></i> Connexion
+                </button>
+                <button class="btn btn-primary btn-sm" onclick="openModal('signupModal')">
+                    <i class="fas fa-user-plus"></i> S'inscrire
+                </button>
+                <div class="language-selector">
+                    <i class="fas fa-globe"></i>
+                    <select onchange="changeLanguage(this.value)">
+                        <option value="fr" selected>FR</option>
+                        <option value="en">EN</option>
+                    </select>
+                </div>
+            </div>
+            
+            <button class="menu-toggle" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="accueil">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Échangez des Cryptos <span class="highlight">Facilement</span> au Niger</h1>
+                    <p class="hero-subtitle">La première plateforme crypto adaptée au marché nigérien. Achetez, vendez et échangez Bitcoin, Ethereum, USDT avec Airtel Money et Moov Money.</p>
+                    
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <div class="stat-number" id="totalUsers">1,250+</div>
+                            <div class="stat-label">Utilisateurs</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number" id="totalVolume">$245K+</div>
+                            <div class="stat-label">Volume échangé</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number" id="transactionTime">2-15min</div>
+                            <div class="stat-label">Traitement</div>
+                        </div>
+                    </div>
+                    
+                    <div class="hero-buttons">
+                        <button class="btn btn-primary btn-lg" onclick="scrollToSection('echanger')">
+                            <i class="fas fa-play-circle"></i> Commencer maintenant
+                        </button>
+                        <button class="btn btn-outline btn-lg" onclick="openModal('tutorialModal')">
+                            <i class="fas fa-graduation-cap"></i> Voir le tutoriel
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="hero-image">
+                    <div class="trading-card">
+                        <div class="trading-card-header">
+                            <h3><i class="fas fa-chart-line"></i> Acheter Bitcoin</h3>
+                            <div class="live-badge">
+                                <span class="live-dot"></span> EN DIRECT
+                            </div>
+                        </div>
+                        <div class="trading-card-price">
+                            <div class="price">$<span id="btcLivePrice">81,519</span></div>
+                            <div class="change negative" id="btcChange">-1.49%</div>
+                        </div>
+                        <div class="trading-card-form">
+                            <div class="form-group">
+                                <label>Je paie</label>
+                                <div class="input-group">
+                                    <input type="number" value="100" min="5" step="0.01" id="buyAmount">
+                                    <select>
+                                        <option>USD</option>
+                                        <option>FCFA</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Je reçois</label>
+                                <div class="input-group">
+                                    <input type="text" value="0.001226" readonly id="receiveCrypto">
+                                    <div class="crypto-label">BTC</div>
+                                </div>
+                            </div>
+                            <button class="btn btn-success btn-block" onclick="buyCrypto()">
+                                <i class="fas fa-shopping-cart"></i> Acheter maintenant
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Market Prices -->
+    <section class="market-section" id="marche">
+        <div class="container">
+            <div class="section-header">
+                <h2><i class="fas fa-coins"></i> Marché en Direct</h2>
+                <p>Prix actualisés toutes les 10 secondes</p>
+                <div class="market-refresh">
+                    <button class="btn btn-sm btn-outline" onclick="refreshMarket()">
+                        <i class="fas fa-sync-alt"></i> Rafraîchir
+                    </button>
+                    <span class="last-update">Dernière mise à jour: <span id="lastUpdateTime">--:--:--</span></span>
+                </div>
+            </div>
+            
+            <div class="market-table-container">
+                <div class="market-filters">
+                    <button class="filter-btn active" data-filter="all">Toutes</button>
+                    <button class="filter-btn" data-filter="gainers">Gagnantes</button>
+                    <button class="filter-btn" data-filter="losers">Perdantes</button>
+                    <button class="filter-btn" data-filter="favorites">Favorites</button>
+                </div>
+                
+                <div class="market-table-wrapper">
+                    <table class="market-table">
+                        <thead>
+                            <tr>
+                                <th>Nom</th>
+                                <th>Prix</th>
+                                <th>24h</th>
+                                <th>Volume</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="marketTable">
+                            <!-- Market data will be loaded here -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trading Section -->
+    <section class="trading-section" id="echanger">
+        <div class="container">
+            <div class="section-header">
+                <h2><i class="fas fa-exchange-alt"></i> Échanger Cryptos</h2>
+                <p>Interface simple pour acheter, vendre et échanger</p>
+            </div>
+            
+            <div class="trading-container">
+                <div class="trading-tabs">
+                    <button class="trading-tab active" data-tab="buy">Acheter</button>
+                    <button class="trading-tab" data-tab="sell">Vendre</button>
+                    <button class="trading-tab" data-tab="convert">Convertir</button>
+                    <button class="trading-tab" data-tab="p2p">P2P</button>
+                </div>
+                
+                <div class="trading-content">
+                    <div class="trading-card">
+                        <div class="trading-form">
+                            <div class="form-group">
+                                <label for="fromCurrency">De</label>
+                                <div class="currency-selector">
+                                    <select id="fromCurrency" onchange="updateConversion()">
+                                        <option value="USD">USD - Dollar US</option>
+                                        <option value="FCFA">FCFA - Franc CFA</option>
+                                        <option value="BTC">BTC - Bitcoin</option>
+                                        <option value="ETH">ETH - Ethereum</option>
+                                        <option value="USDT">USDT - Tether</option>
+                                        <option value="BNB">BNB - Binance Coin</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="toCurrency">À</label>
+                                <div class="currency-selector">
+                                    <select id="toCurrency" onchange="updateConversion()">
+                                        <option value="BTC">BTC - Bitcoin</option>
+                                        <option value="ETH">ETH - Ethereum</option>
+                                        <option value="USDT">USDT - Tether</option>
+                                        <option value="BNB">BNB - Binance Coin</option>
+                                        <option value="USD">USD - Dollar US</option>
+                                        <option value="FCFA">FCFA - Franc CFA</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="amount">Montant</label>
+                                <div class="amount-input">
+                                    <input type="number" id="amount" value="100" min="5" step="0.01" oninput="updateConversion()">
+                                    <div class="amount-buttons">
+                                        <button class="amount-btn" data-percent="25">25%</button>
+                                        <button class="amount-btn" data-percent="50">50%</button>
+                                        <button class="amount-btn" data-percent="75">75%</button>
+                                        <button class="amount-btn" data-percent="100">100%</button>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="conversion-info">
+                                <div class="conversion-rate">
+                                    <span>Taux:</span>
+                                    <strong id="conversionRate">1 USD = 0.000012 BTC</strong>
+                                </div>
+                                <div class="conversion-fee">
+                                    <span>Frais:</span>
+                                    <span id="conversionFee">0.1%</span>
+                                </div>
+                                <div class="conversion-total">
+                                    <span>Vous recevez:</span>
+                                    <strong id="conversionTotal">0.000012 BTC</strong>
+                                </div>
+                            </div>
+                            
+                            <button class="btn btn-primary btn-block btn-lg" onclick="executeTrade()">
+                                <i class="fas fa-bolt"></i> Exécuter l'échange
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="trading-info">
+                        <div class="info-card">
+                            <h3><i class="fas fa-clock"></i> Traitement rapide</h3>
+                            <p>Les transactions sont traitées en 2-15 minutes</p>
+                        </div>
+                        <div class="info-card">
+                            <h3><i class="fas fa-shield-alt"></i> Sécurisé</h3>
+                            <p>Fonds protégés et transactions vérifiées</p>
+                        </div>
+                        <div class="info-card">
+                            <h3><i class="fas fa-headset"></i> Support 24/7</h3>
+                            <p>Équipe disponible pour vous aider</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Payment Methods -->
+    <section class="payment-section" id="paiements">
+        <div class="container">
+            <div class="section-header">
+                <h2><i class="fas fa-wallet"></i> Méthodes de Paiement</h2>
+                <p>Déposez et retirez avec les services locaux</p>
+            </div>
+            
+            <div class="payment-methods-grid">
+                <div class="payment-method">
+                    <div class="payment-icon airtel">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Airtel Money</h3>
+                    <p>Dépôt et retrait instantanés</p>
+                    <div class="payment-limits">
+                        <span>Min: 5$</span>
+                        <span>Max: 500$</span>
+                    </div>
+                </div>
+                
+                <div class="payment-method">
+                    <div class="payment-icon moov">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Moov Money</h3>
+                    <p>Transactions sécurisées</p>
+                    <div class="payment-limits">
+                        <span>Min: 5$</span>
+                        <span>Max: 500$</span>
+                    </div>
+                </div>
+                
+                <div class="payment-method">
+                    <div class="payment-icon amanata">
+                        <i class="fas fa-university"></i>
+                    </div>
+                    <h3>AmanaTa</h3>
+                    <p>Service bancaire mobile</p>
+                    <div class="payment-limits">
+                        <span>Min: 5$</span>
+                        <span>Max: 1,000$</span>
+                    </div>
+                </div>
+                
+                <div class="payment-method">
+                    <div class="payment-icon mynita">
+                        <i class="fas fa-credit-card"></i>
+                    </div>
+                    <h3>MyNita</h3>
+                    <p>Portefeuille électronique</p>
+                    <div class="payment-limits">
+                        <span>Min: 5$</span>
+                        <span>Max: 500$</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="deposit-guide">
+                <h3><i class="fas fa-info-circle"></i> Comment déposer</h3>
+                <div class="guide-steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h4>Créez votre compte</h4>
+                            <p>Inscrivez-vous gratuitement en 2 minutes</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h4>Complétez le KYC</h4>
+                            <p>Vérifiez votre identité une seule fois</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h4>Déposez des fonds</h4>
+                            <p>Utilisez Mobile Money depuis votre téléphone</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h4>Commencez à trader</h4>
+                            <p>Achetez des cryptos dès que le dépôt est reçu</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section" id="aide">
+        <div class="container">
+            <div class="section-header">
+                <h2><i class="fas fa-question-circle"></i> Questions Fréquentes</h2>
+                <p>Trouvez rapidement des réponses à vos questions</p>
+            </div>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <span>Comment créer un compte sur Monexa?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Cliquez sur "S'inscrire" en haut à droite, entrez votre email et numéro de téléphone, créez un mot de passe, et validez votre email. Ensuite, complétez le KYC en uploadant une pièce d'identité.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <span>Quelles pièces pour le KYC?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Accepté: CNI nigérienne, passeport, permis de conduire nigérien. Vous devez également fournir un selfie avec votre pièce d'identité.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <span>Combien de temps pour un dépôt Mobile Money?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Les dépôts Airtel Money et Moov Money sont crédités en 2-30 minutes. Si cela prend plus de 60 minutes, contactez notre support.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <span>Y a-t-il des frais?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Dépôt Mobile Money: 0% • Retrait Mobile Money: 1.5% • Trading: 0.1% • Retrait crypto: frais de réseau seulement.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <span>Comment retirer mes cryptos?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Allez dans "Retrait Crypto", sélectionnez la crypto, entrez l'adresse de votre portefeuille externe et le montant. Pas de minimum de retrait.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="more-help">
+                <p>Besoin d'aide supplémentaire? <a href="contact.html">Contactez notre équipe</a> ou visitez notre <a href="faq.html">FAQ complète</a>.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Prêt à commencer votre voyage crypto?</h2>
+                <p>Rejoignez des milliers de Nigériens qui utilisent déjà Monexa. Sécurisé, rapide et conçu pour vous.</p>
+                <div class="cta-buttons">
+                    <button class="btn btn-primary btn-lg" onclick="openModal('signupModal')">
+                        <i class="fas fa-user-plus"></i> Créer un compte gratuit
+                    </button>
+                    <button class="btn btn-outline btn-lg" onclick="window.open('https://wa.me/22788904490', '_blank')">
+                        <i class="fab fa-whatsapp"></i> WhatsApp Support
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-coins"></i>
+                        <span>MONEXA</span>
+                    </div>
+                    <p class="footer-description">
+                        La plateforme crypto la plus simple et accessible pour le marché nigérien. Échangez en toute sécurité avec les méthodes de paiement locales.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-telegram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Navigation</h3>
+                    <ul class="footer-links">
+                        <li><a href="#accueil">Accueil</a></li>
+                        <li><a href="#marche">Marché</a></li>
+                        <li><a href="#echanger">Échanger</a></li>
+                        <li><a href="#paiements">Paiements</a></li>
+                        <li><a href="#aide">Aide</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Légal</h3>
+                    <ul class="footer-links">
+                        <li><a href="terms.html">Conditions d'utilisation</a></li>
+                        <li><a href="privacy.html">Politique de confidentialité</a></li>
+                        <li><a href="kyc.html">Politique KYC</a></li>
+                        <li><a href="aml.html">Politique AML</a></li>
+                        <li><a href="fees.html">Frais et limites</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <ul class="footer-contact">
+                        <li><i class="fas fa-envelope"></i> support@monexa.ne</li>
+                        <li><i class="fas fa-phone"></i> +227 88 90 44 90</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Niamey, Niger</li>
+                        <li><i class="fas fa-clock"></i> Support 24/7</li>
+                    </ul>
+                    <div class="newsletter">
+                        <input type="email" placeholder="Votre email" id="newsletterEmail">
+                        <button class="btn btn-sm btn-primary" onclick="subscribeNewsletter()">S'inscrire</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-copyright">
+                    &copy; 2026 Monexa. Tous droits réservés. Conçu avec passion <i class="fas fa-heart"></i> au Niger.
+                </div>
+                <div class="footer-payments">
+                    <span class="payment-badge"><i class="fas fa-shield-alt"></i> Sécurisé SSL</span>
+                    <span class="payment-badge"><i class="fas fa-mobile-alt"></i> Mobile Money</span>
+                    <span class="payment-badge"><i class="fas fa-lock"></i> KYC Verifié</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modals -->
+    <div class="modal" id="signupModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3><i class="fas fa-user-plus"></i> Créer un compte</h3>
+                <button class="modal-close" onclick="closeModal('signupModal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="signupForm" onsubmit="registerUser(event)">
+                    <div class="form-group">
+                        <label for="fullName">Nom complet</label>
+                        <input type="text" id="fullName" required placeholder="Votre nom et prénom">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Adresse email</label>
+                        <input type="email" id="email" required placeholder="exemple@email.com">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Numéro de téléphone</label>
+                        <input type="tel" id="phone" required placeholder="90 12 34 56">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="password">Mot de passe</label>
+                        <input type="password" id="password" required placeholder="Minimum 8 caractères">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="confirmPassword">Confirmer le mot de passe</label>
+                        <input type="password" id="confirmPassword" required placeholder="Répétez le mot de passe">
+                    </div>
+                    
+                    <div class="form-check">
+                        <input type="checkbox" id="acceptTerms" required>
+                        <label for="acceptTerms">J'accepte les <a href="terms.html">Conditions d'utilisation</a> et la <a href="privacy.html">Politique de confidentialité</a></label>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary btn-block">
+                        <i class="fas fa-user-plus"></i> Créer mon compte
+                    </button>
+                    
+                    <div class="form-footer">
+                        <p>Déjà un compte? <a href="#" onclick="closeModal('signupModal'); openModal('loginModal')">Connectez-vous</a></p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Login Modal -->
+    <div class="modal" id="loginModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3><i class="fas fa-sign-in-alt"></i> Connexion</h3>
+                <button class="modal-close" onclick="closeModal('loginModal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="loginForm" onsubmit="loginUser(event)">
+                    <div class="form-group">
+                        <label for="loginEmail">Email ou téléphone</label>
+                        <input type="text" id="loginEmail" required placeholder="Email ou numéro de téléphone">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="loginPassword">Mot de passe</label>
+                        <input type="password" id="loginPassword" required placeholder="Votre mot de passe">
+                    </div>
+                    
+                    <div class="form-options">
+                        <label class="form-check">
+                            <input type="checkbox" id="rememberMe">
+                            <span>Se souvenir de moi</span>
+                        </label>
+                        <a href="#" onclick="openModal('forgotModal')">Mot de passe oublié?</a>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary btn-block">
+                        <i class="fas fa-sign-in-alt"></i> Se connecter
+                    </button>
+                    
+                    <div class="form-footer">
+                        <p>Pas encore de compte? <a href="#" onclick="closeModal('loginModal'); openModal('signupModal')">Inscrivez-vous</a></p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Deposit Modal -->
+    <div class="modal" id="depositModal">
+        <div class="modal-content wide-modal">
+            <div class="modal-header">
+                <h3><i class="fas fa-money-bill-wave"></i> Déposer des fonds</h3>
+                <button class="modal-close" onclick="closeModal('depositModal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <!-- Deposit content will be loaded dynamically -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Loading Spinner -->
+    <div class="loading-spinner" id="loadingSpinner">
+        <div class="spinner"></div>
+        <p>Chargement...</p>
+    </div>
+
+    <!-- Notification Toast -->
+    <div class="toast" id="notificationToast">
+        <div class="toast-content">
+            <i class="fas fa-check-circle"></i>
+            <span id="toastMessage">Action réussie!</span>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+    
+    <!-- Initialize PWA -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('service-worker.js')
+                .then(() => console.log('Service Worker enregistré'))
+                .catch(err => console.log('Erreur Service Worker:', err));
+        }
+    </script>
+</body>
+</html>

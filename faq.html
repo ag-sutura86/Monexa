@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - Monexa</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-coins"></i>
+                <span>MONEXA</span>
+            </a>
+            <nav class="nav-menu">
+                <a href="index.html"><i class="fas fa-home"></i> Accueil</a>
+                <a href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container" style="padding: 4rem 1rem; max-width: 800px;">
+        <div class="section-header">
+            <h1><i class="fas fa-question-circle"></i> Questions Fréquentes</h1>
+            <p>Trouvez rapidement des réponses à vos questions sur Monexa</p>
+        </div>
+
+        <div class="faq-categories" style="margin-bottom: 3rem;">
+            <div style="display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center;">
+                <a href="#compte" class="btn btn-outline">Création de compte</a>
+                <a href="#verification" class="btn btn-outline">Vérification KYC</a>
+                <a href="#depot" class="btn btn-outline">Dépôts</a>
+                <a href="#retrait" class="btn btn-outline">Retraits</a>
+                <a href="#trading" class="btn btn-outline">Trading</a>
+                <a href="#securite" class="btn btn-outline">Sécurité</a>
+            </div>
+        </div>
+
+        <div class="faq-section" id="compte" style="margin-bottom: 3rem;">
+            <h2 style="margin-bottom: 1.5rem; color: var(--primary); padding-bottom: 0.5rem; border-bottom: 2px solid var(--primary);">
+                <i class="fas fa-user-circle"></i> Création de compte
+            </h2>
+            
+            <div class="faq-item" style="margin-bottom: 1rem; background: var(--white); padding: 1.5rem; border-radius: var(--border-radius); box-shadow: var(--box-shadow);">
+                <h3 style="color: var(--dark); margin-bottom: 0.5rem; cursor: pointer;" onclick="toggleFAQ(this)">
+                    Comment créer un compte sur Monexa?
+                    <i class="fas fa-chevron-down" style="float: right; transition: transform 0.3s;"></i>
+                </h3>
+                <div class="faq-answer" style="max-height: 0; overflow: hidden; transition: max-height 0.3s;">
+                    <p style="color: var(--gray); margin-top: 0.5rem;">
+                        Cliquez sur "S'inscrire" en haut à droite du site, entrez votre email et numéro de téléphone, créez un mot de passe sécurisé, et validez votre email via le lien reçu. Ensuite, complétez le processus KYC pour activer toutes les fonctionnalités.
+                    </p>
+                </div>
+            </div>
+
+            <div class="faq-item" style="margin-bottom: 1rem; background: var(--white); padding: 1.5rem; border-radius: var(--border-radius); box-shadow: var(--box-shadow);">
+                <h3 style="color: var(--dark); margin-bottom: 0.5rem; cursor: pointer;" onclick="toggleFAQ(this)">
+                    Quels sont les prérequis pour ouvrir un compte?
+                    <i class="fas fa-chevron-down" style="float: right; transition: transform 0.3s;"></i>
+                </h3>
+                <div class="faq-answer" style="max-height: 0; overflow: hidden; transition: max-height 0.3s;">
+                    <p style="color: var(--gray); margin-top: 0.5rem;">
+                        Vous devez avoir au moins 18 ans, être résident du Niger, posséder un numéro de téléphone mobile actif et une adresse email valide, et avoir une pièce d'identité nigérienne valide (CNI, passeport ou permis de conduire).
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="faq-section" id="verification" style="margin-bottom: 3rem;">
+            <h2 style="margin-bottom: 1.5rem; color: var(--primary); padding-bottom: 0.5rem; border-bottom: 2px solid var(--primary);">
+                <i class="fas fa-id-card"></i> Vérification KYC
+            </h2>
+            
+            <div class="faq-item" style="margin-bottom: 1rem; background: var(--white); padding: 1.5rem; border-radius: var(--border-radius); box-shadow: var(--box-shadow);">
+                <h3 style="color: var(--dark); margin-bottom: 0.5rem; cursor: pointer;" onclick="toggleFAQ(this)">
+                    Quels documents sont acceptés pour le KYC?
+                    <i class="fas fa-chevron-down" style="float: right; transition: transform 0.3s;"></i>
+                </h3>
+                <div class="faq-answer" style="max-height: 0; overflow: hidden; transition: max-height 0.3s;">
+                    <p style="color: var(--gray); margin-top: 0.5rem;">
+                        Nous acceptons : CNI nigérienne (valide), Passeport (valide), Permis de conduire nigérien (valide). Vous devez également fournir un selfie avec votre pièce d'identité et une preuve d'adresse récente (facture d'eau, d'électricité ou de téléphone datant de moins de 3 mois).
+                    </p>
+                </div>
+            </div>
+
+            <div class="faq-item" style="margin-bottom: 1rem; background: var(--white); padding: 1.5rem; border-radius: var(--border-radius); box-shadow: var(--box-shadow);">
+                <h3 style="color: var(--dark); margin-bottom: 0.5rem; cursor: pointer;" onclick="toggleFAQ(this)">
+                    Combien de temps prend la vérification KYC?
+                    <i class="fas fa-chevron-down" style="float: right; transition: transform 0.3s;"></i>
+                </h3>
+                <div class="faq-answer" style="max-height: 0; overflow: hidden; transition: max-height 0.3s;">
+                    <p style="color: var(--gray); margin-top: 0.5rem;">
+                        La vérification manuelle prend généralement 1 à 3 heures ouvrables. Dans certains cas, cela peut prendre jusqu'à 24 heures. Vous recevrez une notification par email une fois votre compte vérifié.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="faq-section" id="depot" style="margin-bottom: 3rem;">
+            <h2 style="margin-bottom: 1.5rem; color: var(--primary); padding-bottom: 0.5rem; border-bottom: 2px solid var(--primary);">
+                <i class="fas fa-money-bill-wave"></i> Dépôts
+            </h2>
+            
+            <div class="faq-item" style="margin-bottom: 1rem; background: var(--white); padding: 1.5rem; border-radius: var(--border-radius); box-shadow: var(--box-shadow);">
+                <h3 style="color: var(--dark); margin-bottom: 0.5rem; cursor: pointer;" onclick="toggleFAQ(this)">
+                    Quelles méthodes de dépôt sont disponibles?
+                    <i class="fas fa-chevron-down" style="float: right; transition: transform 0.3s;"></i>
+                </h3>
+                <div class="faq-answer" style="max-height: 0; overflow: hidden; transition: max-height 0.3s;">
+                    <p style="color: var(--gray); margin-top: 0.5rem;">
+                        Nous acceptons : Airtel Money, Moov Money, AmanaTa et MyNita. Chaque méthode a ses propres limites et temps de traitement. Les dépôts Mobile Money sont généralement les plus rapides (2-15 minutes).
+                    </p>
+                </div>
+            </div>
+
+            <div class="faq-item" style="margin-bottom: 1rem; background: var(--white); padding: 1.5rem; border-radius: var(--border-radius); box-shadow: var(--box-shadow);">
+                <h3 style="color: var(--dark); margin-bottom: 0.5rem; cursor: pointer;" onclick="toggleFAQ(this)">
+                    Quel est le délai de traitement d'un dépôt?
+                    <i class="fas fa-chevron-down" style="float: right; transition: transform 0.3s;"></i>
+                </h3>
+                <div class="faq-answer" style="max-height: 0; overflow: hidden; transition: max-height 0.3s;">
+                    <p style="color: var(--gray); margin-top: 0.5rem;">
+                        • Airtel Money : 2-5 minutes<br>
+                        • Moov Money : 2-5 minutes<br>
+                        • AmanaTa : 5-15 minutes<br>
+                        • MyNita : 5-15 minutes<br>
+                        Si votre dépôt prend plus de 30 minutes, contactez notre support.
+                    </p>
+                </div>
+            </div>
+
+            <div class="faq-item" style="margin-bottom: 1rem; background: var(--white); padding: 1.5rem; border-radius: var(--border-radius); box-shadow: var(--box-shadow);">
+                <h3 style="color: var(--dark); margin-bottom: 0.5rem; cursor: pointer;" onclick="toggleFAQ(this)">
+                    Y a-t-il des frais pour les dépôts?
+                    <i class="fas fa-chevron-down" style="float: right; transition: transform 0.3s;"></i>
+                </h3>
+                <div class="faq-answer" style="max-height: 0; overflow: hidden; transition: max-height 0.3s;">
+                    <p style="color: var(--gray); margin-top: 0.5rem;">
+                        Non, Monexa n'applique aucun frais pour les dépôts. Cependant, votre opérateur Mobile Money peut appliquer ses propres frais de transaction. Veuillez vérifier auprès de votre fournisseur de service.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="faq-section" id="retrait" style="margin-bottom: 3rem;">
+            <h2 style="margin-bottom: 1.5rem; color: var(--primary); padding-bottom: 0.5rem; border-bottom: 2px solid var(--primary);">
+                <i class="fas fa-paper-plane"></i> Retraits
+            </h2>
+            
+            <div class="faq-item" style="margin-bottom: 1rem; background: var(--white); padding: 1.5rem; border-radius: var(--border-radius); box-shadow: var(--box-shadow);">
+                <h3 style="color: var(--dark); margin-bottom: 0.5rem; cursor: pointer;" onclick="toggleFAQ(this)">
+                    Comment retirer mes fonds vers Mobile Money?
+                    <i class="fas fa-chevron-down" style="float: right; transition: transform 0.3s;"></i>
+                </h3>
+                <div class="faq-answer" style="max-height: 0; overflow: hidden; transition: max-height 0.3s;">
+                    <p style="color: var(--gray); margin-top: 0.5rem;">
+                        Allez dans "Retrait", sélectionnez Mobile Money, choisissez Airtel Money ou Moov Money, entrez votre numéro de téléphone et le montant, confirmez la transaction. Les retraits sont traités en 2-15 minutes.
+                    </p>
+                </div>
+            </div>
+
+            <div class="faq-item" style="margin-bottom: 1rem; background: var(--white); padding: 1.5rem; border-radius: var(--border-radius); box-shadow: var(--box-shadow);">
+                <h3 style="color: var(--dark); margin-bottom: 0.5rem; cursor: pointer;" onclick="toggleFAQ(this)">
+                    Quels sont les frais de retrait?
+                    <i class="fas fa-chevron-down" style="float: right; transition: transform 0.3s;"></i>
+                </h3>
+                <div class="faq-answer" style="max-height: 0; overflow: hidden; transition: max-height 0.3s;">
+                    <p style="color: var(--gray); margin-top: 0.5rem;">
+                        • Retrait Mobile Money : 1.5%<br>
+                        • Retrait crypto : frais de réseau uniquement (varie selon la crypto)<br>
+                        • Pas de frais minimum<br>
+                        • Les frais sont affichés avant confirmation
+                    </p>
+                </div>
+            </div>
+
+            <div class="faq-item" style="margin-bottom: 1rem; background: var(--white); padding: 1.5rem; border-radius: var(--border-radius); box-shadow: var(--box-shadow);">
+                <h3 style="color: var(--dark); margin-bottom: 0.5rem; cursor: pointer;" onclick="toggleFAQ(this)">
+                    Y a-t-il un minimum pour les retraits?
+                    <i class="fas fa-chevron-down" style="float: right; transition: transform 0.3s;"></i>
+                </h3>
+                <div class="faq-answer" style="max-height: 0; overflow: hidden; transition: max-height 0.3s;">
+                    <p style="color: var(--gray); margin-top: 0.5rem;">
+                        Non, il n'y a pas de minimum de retrait sur Monexa. Vous pouvez retirer n'importe quel montant, même très petit. Cependant, assurez-vous que le montant couvre les frais de transaction.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="faq-section" id="trading" style="margin-bottom: 3rem;">
+            <h2 style="margin-bottom: 1.5rem; color: var(--primary); padding-bottom: 0.5rem; border-bottom: 2px solid var(--primary);">
+                <i class="fas fa-exchange-alt"></i> Trading
+            </h2>
+            
+            <div class="faq-item" style="margin-bottom: 1rem; background: var(--white); padding: 1.5rem; border-radius: var(--border-radius); box-shadow: var(--box-shadow);">
+                <h3 style="color: var(--dark); margin-bottom: 0.5rem; cursor: pointer;" onclick="toggleFAQ(this)">
+                    Quelles cryptomonnaies puis-je trader?
+                    <i class="fas fa-chevron-down" style="float: right; transition: transform 0.3s;"></i>
+                </h3>
+                <div class="faq-answer" style="max-height: 0; overflow: hidden; transition: max-height 0.3s;">
+                    <p style="color: var(--gray); margin-top: 0.5rem;">
+                        Actuellement : Bitcoin (BTC), Ethereum (ETH), Tether (USDT), BNB, Ripple (XRP), Solana (SOL), Cardano (ADA), Dogecoin (DOGE). Nous ajoutons régulièrement de nouvelles cryptomonnaies basées sur la demande.
+                    </p>
+                </div>
+            </div>
+
+            <div class="faq-item" style="margin-bottom: 1rem; background: var(--white); padding: 1.5rem; border-radius: var(--border-radius); box-shadow: var(--box-shadow);">
+                <h3 style="color: var(--dark); margin-bottom: 0.5rem; cursor: pointer;" onclick="toggleFAQ(this)">
+                    Quels sont les frais de trading?
+                    <i class="fas fa-chevron-down" style="float: right; transition: transform 0.3s;"></i>
+                </h3>
+                <div class="faq-answer" style="max-height: 0; overflow: hidden; transition: max-height 0.3s;">
+                    <p style="color: var(--gray); margin-top: 0.5rem;">
+                        Les frais de trading sont de 0.1% par transaction (achat ou vente). Ces frais sont inclus dans le prix affiché. Il n'y a pas de frais supplémentaires cachés.
+                    </p>
+                </div>
+            </div>
+
+            <div class="faq-item" style="margin-bottom: 1rem; background: var(--white); padding: 1.5rem; border-radius: var(--border-radius); box-shadow: var(--box-shadow);">
+                <h3 style="color: var(--dark); margin-bottom: 0.5rem; cursor: pointer;" onclick="toggleFAQ(this)">
+                    Comment sont déterminés les prix?
+                    <i class="fas fa-chevron-down" style="float: right; transition: transform 0.3s;"></i>
+                </h3>
+                <div class="faq-answer" style="max-height: 0; overflow: hidden; transition: max-height 0.3s;">
+                    <p style="color: var(--gray); margin-top: 0.5rem;">
+                        Les prix sont basés sur le marché mondial des cryptomonnaies avec une petite marge pour couvrir nos frais opérationnels. Nous nous efforçons d'offrir les prix les plus compétitifs possibles tout en maintenant un service fiable.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="faq-section" id="securite" style="margin-bottom: 3rem;">
+            <h2 style="margin-bottom: 1.5rem; color: var(--primary); padding-bottom: 0.5rem; border-bottom: 2px solid var(--border-color);">
+                <i class="fas fa-shield-alt"></i> Sécurité
+            </h2>
+            
+            <div class="faq-item" style="margin-bottom: 1rem; background: var(--white); padding: 1.5rem; border-radius: var(--border-radius); box-shadow: var(--box-shadow);">
+                <h3 style="color: var(--dark); margin-bottom: 0.5rem; cursor: pointer;" onclick="toggleFAQ(this)">
+                    Comment Monexa protège-t-il mes fonds?
+                    <i class="fas fa-chevron-down" style="float: right; transition: transform 0.3s;"></i>
+                </h3>
+                <div class="faq-answer" style="max-height: 0; overflow: hidden; transition: max-height 0.3s;">
+                    <p style="color: var(--gray); margin-top: 0.5rem;">
+                        Nous utilisons plusieurs couches de sécurité :<br>
+                        1. Stockage à froid pour 95% des fonds<br>
+                        2. Authentification à deux facteurs (2FA)<br>
+                        3. Chiffrement SSL 256-bit<br>
+                        4. Surveillance continue des transactions<br>
+                        5. Audit de sécurité régulier
+                    </p>
+                </div>
+            </div>
+
+            <div class="faq-item" style="margin-bottom: 1rem; background: var(--white); padding: 1.5rem; border-radius: var(--border-radius); box-shadow: var(--box-shadow);">
+                <h3 style="color: var(--dark); margin-bottom: 0.5rem; cursor: pointer;" onclick="toggleFAQ(this)">
+                    Comment activer l'authentification à deux facteurs?
+                    <i class="fas fa-chevron-down" style="float: right; transition: transform 0.3s;"></i>
+                </h3>
+                <div class="faq-answer" style="max-height: 0; overflow: hidden; transition: max-height 0.3s;">
+                    <p style="color: var(--gray); margin-top: 0.5rem;">
+                        Allez dans "Paramètres de sécurité" dans votre compte, cliquez sur "Activer 2FA", scannez le QR code avec Google Authenticator ou Authy, entrez le code généré pour confirmer. Nous recommandons fortement d'activer le 2FA pour une sécurité optimale.
+                    </p>
+                </div>
+            </div>
+
+            <div class="faq-item" style="margin-bottom: 1rem; background: var(--white); padding: 1.5rem; border-radius: var(--border-radius); box-shadow: var(--box-shadow);">
+                <h3 style="color: var(--dark); margin-bottom: 0.5rem; cursor: pointer;" onclick="toggleFAQ(this)">
+                    Que faire si je soupçonne une activité frauduleuse?
+                    <i class="fas fa-chevron-down" style="float: right; transition: transform 0.3s;"></i>
+                </h3>
+                <div class="faq-answer" style="max-height: 0; overflow: hidden; transition: max-height 0.3s;">
+                    <p style="color: var(--gray); margin-top: 0.5rem;">
+                        1. Changez immédiatement votre mot de passe<br>
+                        2. Activez le 2FA si ce n'est pas déjà fait<br>
+                        3. Contactez notre support d'urgence<br>
+                        4. Vérifiez l'historique des transactions<br>
+                        5. Signalez toute activité suspecte
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="more-help" style="text-align: center; padding: 2rem; background-color: rgba(42, 91, 215, 0.05); border-radius: var(--border-radius); margin-top: 2rem;">
+            <h3 style="color: var(--primary); margin-bottom: 1rem;">
+                <i class="fas fa-comments"></i> Vous n'avez pas trouvé de réponse?
+            </h3>
+            <p style="color: var(--gray); margin-bottom: 1.5rem;">
+                Notre équipe de support est disponible 24h/24 pour vous aider.
+            </p>
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <a href="contact.html" class="btn btn-primary">
+                    <i class="fas fa-envelope"></i> Contactez-nous
+                </a>
+                <a href="https://wa.me/22788904490" target="_blank" class="btn btn-success">
+                    <i class="fab fa-whatsapp"></i> WhatsApp Support
+                </a>
+                <a href="tel:+22788904490" class="btn btn-outline">
+                    <i class="fas fa-phone"></i> Appelez-nous
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-bottom" style="border-top: none;">
+                <div class="footer-copyright">
+                    &copy; 2026 Monexa. Tous droits réservés.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleFAQ(element) {
+            const answer = element.nextElementSibling;
+            const icon = element.querySelector('i');
+            
+            if (answer.style.maxHeight && answer.style.maxHeight !== '0px') {
+                answer.style.maxHeight = '0';
+                icon.style.transform = 'rotate(0deg)';
+            } else {
+                answer.style.maxHeight = answer.scrollHeight + 'px';
+                icon.style.transform = 'rotate(180deg)';
+            }
+        }
+        
+        // Ouvrir la section correspondante si un hash est présent dans l'URL
+        window.addEventListener('hashchange', function() {
+            const sectionId = window.location.hash.substring(1);
+            const section = document.getElementById(sectionId);
+            if (section) {
+                section.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+        
+        // Initialiser les FAQ ouvertes si spécifié dans l'URL
+        document.addEventListener('DOMContentLoaded', function() {
+            const hash = window.location.hash.substring(1);
+            if (hash) {
+                const section = document.getElementById(hash);
+                if (section) {
+                    section.scrollIntoView({ behavior: 'smooth' });
+                }
+            }
+        });
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Monexa</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-coins"></i>
+                <span>MONEXA</span>
+            </a>
+            <nav class="nav-menu">
+                <a href="index.html"><i class="fas fa-home"></i> Accueil</a>
+                <a href="faq.html"><i class="fas fa-question-circle"></i> FAQ</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container" style="padding: 4rem 1rem;">
+        <div class="section-header">
+            <h1><i class="fas fa-envelope"></i> Contactez-nous</h1>
+            <p>Notre équipe est disponible pour répondre à vos questions</p>
+        </div>
+
+        <div class="contact-container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 3rem;">
+            <div class="contact-info" style="background: var(--white); padding: 2rem; border-radius: var(--border-radius); box-shadow: var(--box-shadow);">
+                <h2 style="margin-bottom: 1.5rem; color: var(--primary);">Informations de contact</h2>
+                
+                <div class="contact-item" style="margin-bottom: 1.5rem; display: flex; align-items: flex-start; gap: 1rem;">
+                    <div class="contact-icon" style="width: 40px; height: 40px; background-color: var(--primary); color: var(--white); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <div>
+                        <h3 style="color: var(--dark); margin-bottom: 0.25rem;">Support client</h3>
+                        <p style="color: var(--gray);">24 heures sur 24, 7 jours sur 7</p>
+                        <p style="font-weight: 600; color: var(--dark);">+227 90 00 00 00</p>
+                    </div>
+                </div>
+
+                <div class="contact-item" style="margin-bottom: 1.5rem; display: flex; align-items: flex-start; gap: 1rem;">
+                    <div class="contact-icon" style="width: 40px; height: 40px; background-color: var(--primary); color: var(--white); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div>
+                        <h3 style="color: var(--dark); margin-bottom: 0.25rem;">Email</h3>
+                        <p style="font-weight: 600; color: var(--dark);">support@monexa.ne</p>
+                        <p style="color: var(--gray);">Réponse sous 24 heures</p>
+                    </div>
+                </div>
+
+                <div class="contact-item" style="margin-bottom: 1.5rem; display: flex; align-items: flex-start; gap: 1rem;">
+                    <div class="contact-icon" style="width: 40px; height: 40px; background-color: var(--primary); color: var(--white); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                        <i class="fab fa-whatsapp"></i>
+                    </div>
+                    <div>
+                        <h3 style="color: var(--dark); margin-bottom: 0.25rem;">WhatsApp</h3>
+                        <p style="font-weight: 600; color: var(--dark);">+227 88 90 44</p>
+                        <p style="color: var(--gray);">Support en direct</p>
+                    </div>
+                </div>
+
+                <div class="contact-item" style="margin-bottom: 1.5rem; display: flex; align-items: flex-start; gap: 1rem;">
+                    <div class="contact-icon" style="width: 40px; height: 40px; background-color: var(--primary); color: var(--white); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div>
+                        <h3 style="color: var(--dark); margin-bottom: 0.25rem;">Adresse</h3>
+                        <p style="font-weight: 600; color: var(--dark);">Niamey, Niger</p>
+                        <p style="color: var(--gray);">Bureau principal</p>
+                    </div>
+                </div>
+
+                <div class="contact-hours" style="margin-top: 2rem; padding: 1.5rem; background-color: rgba(42, 91, 215, 0.05); border-radius: var(--border-radius);">
+                    <h3 style="color: var(--primary); margin-bottom: 0.5rem;">
+                        <i class="fas fa-clock"></i> Horaires de support
+                    </h3>
+                    <ul style="list-style: none;">
+                        <li style="margin-bottom: 0.5rem; display: flex; justify-content: space-between;">
+                            <span>Lundi - Vendredi</span>
+                            <span style="font-weight: 600;">24h/24</span>
+                        </li>
+                        <li style="display: flex; justify-content: space-between;">
+                            <span>Samedi</span>
+                            <span style="font-weight: 600;">8h/24</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="contact-form" style="background: var(--white); padding: 2rem; border-radius: var(--border-radius); box-shadow: var(--box-shadow);">
+                <h2 style="margin-bottom: 1.5rem; color: var(--primary);">Envoyez-nous un message</h2>
+                
+                <form id="contactForm" onsubmit="submitContactForm(event)">
+                    <div class="form-group" style="margin-bottom: 1rem;">
+                        <label for="contactName" style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Nom complet *</label>
+                        <input type="text" id="contactName" required style="width: 100%; padding: 0.75rem; border: 1px solid var(--light-gray); border-radius: var(--border-radius);">
+                    </div>
+
+                    <div class="form-group" style="margin-bottom: 1rem;">
+                        <label for="contactEmail" style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Email *</label>
+                        <input type="email" id="contactEmail" required style="width: 100%; padding: 0.75rem; border: 1px solid var(--light-gray); border-radius: var(--border-radius);">
+                    </div>
+
+                    <div class="form-group" style="margin-bottom: 1rem;">
+                        <label for="contactPhone" style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Numéro de téléphone</label>
+                        <input type="tel" id="contactPhone" style="width: 100%; padding: 0.75rem; border: 1px solid var(--light-gray); border-radius: var(--border-radius);">
+                    </div>
+
+                    <div class="form-group" style="margin-bottom: 1rem;">
+                        <label for="contactSubject" style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Sujet *</label>
+                        <select id="contactSubject" required style="width: 100%; padding: 0.75rem; border: 1px solid var(--light-gray); border-radius: var(--border-radius);">
+                            <option value="">Sélectionnez un sujet</option>
+                            <option value="support">Support technique</option>
+                            <option value="kyc">Vérification KYC</option>
+                            <option value="deposit">Problème de dépôt</option>
+                            <option value="withdrawal">Problème de retrait</option>
+                            <option value="security">Sécurité du compte</option>
+                            <option value="partnership">Demande de partenariat</option>
+                            <option value="other">Autre</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group" style="margin-bottom: 1.5rem;">
+                        <label for="contactMessage" style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Message *</label>
+                        <textarea id="contactMessage" required rows="6" style="width: 100%; padding: 0.75rem; border: 1px solid var(--light-gray); border-radius: var(--border-radius); resize: vertical;"></textarea>
+                    </div>
+
+                    <div class="form-group" style="margin-bottom: 1.5rem;">
+                        <label style="display: flex; align-items: flex-start; gap: 0.5rem; font-size: 0.9rem;">
+                            <input type="checkbox" required style="margin-top: 0.25rem;">
+                            <span>J'accepte la <a href="privacy.html" style="color: var(--primary);">politique de confidentialité</a> et autorise Monexa à traiter mes données pour répondre à ma demande.</span>
+                        </label>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary" style="width: 100%; padding: 1rem;">
+                        <i class="fas fa-paper-plane"></i> Envoyer le message
+                    </button>
+
+                    <p style="text-align: center; margin-top: 1rem; color: var(--gray); font-size: 0.9rem;">
+                        Nous répondons généralement dans les 24 heures
+                    </p>
+                </form>
+            </div>
+        </div>
+
+        <div class="faq-preview" style="margin-top: 4rem;">
+            <h2 style="text-align: center; margin-bottom: 2rem; color: var(--dark);">
+                <i class="fas fa-question-circle"></i> Questions fréquentes
+            </h2>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem;">
+                <div style="background: var(--white); padding: 1.5rem; border-radius: var(--border-radius); box-shadow: var(--box-shadow);">
+                    <h3 style="color: var(--primary); margin-bottom: 0.5rem;">Combien de temps pour un dépôt?</h3>
+                    <p style="color: var(--gray);">Les dépôts Mobile Money sont crédités en 2-15 minutes.</p>
+                </div>
+                
+                <div style="background: var(--white); padding: 1.5rem; border-radius: var(--border-radius); box-shadow: var(--box-shadow);">
+                    <h3 style="color: var(--primary); margin-bottom: 0.5rem;">Quels documents pour le KYC?</h3>
+                    <p style="color: var(--gray);">CNI, passeport ou permis de conduire nigérien valide.</p>
+                </div>
+                
+                <div style="background: var(--white); padding: 1.5rem; border-radius: var(--border-radius); box-shadow: var(--box-shadow);">
+                    <h3 style="color: var(--primary); margin-bottom: 0.5rem;">Y a-t-il des frais cachés?</h3>
+                    <p style="color: var(--gray);">Non, tous nos frais sont transparents et affichés.</p>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 2rem;">
+                <a href="faq.html" class="btn btn-outline">
+                    <i class="fas fa-list"></i> Voir toutes les FAQ
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-bottom" style="border-top: none;">
+                <div class="footer-copyright">
+                    &copy; 2026 Monexa. Tous droits réservés.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function submitContactForm(event) {
+            event.preventDefault();
+            
+            const name = document.getElementById('contactName').value;
+            const email = document.getElementById('contactEmail').value;
+            const subject = document.getElementById('contactSubject').value;
+            const message = document.getElementById('contactMessage').value;
+            
+            if (!name || !email || !subject || !message) {
+                alert('Veuillez remplir tous les champs obligatoires');
+                return;
+            }
+            
+            // Dans une vraie application, vous enverriez ces données à un serveur
+            // Pour l'instant, nous simulons l'envoi
+            alert('Merci pour votre message! Notre équipe vous répondra dans les plus brefs délais.');
+            
+            // Réinitialiser le formulaire
+            document.getElementById('contactForm').reset();
+        }
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
